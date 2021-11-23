@@ -17,3 +17,13 @@
 -- devServer.headers - Attach custom headers to your requests here.
 
 - webpack-notifier
+- webpack-merge - for config mergeing (simple)
+- webpack-chain - provides a fluent API for configuring webpack allowing you to avoid configuration shape-related problems while enabling composition
+
+
+Warnings:
+- Webpack does not set global NODE_ENV based on mode by default. If you have any external tooling, such as Babel, relying on it, make sure to set it explicitly. To do this, set process.env.NODE_ENV = mode; within getConfig.
+
+TODO:
+- WPS disconnets WebSocket (disabling live reloads to browser) after new webpack runtime - check things out
+- SurviveJS - Maintenance https://survivejs.com/maintenance/ - check this out

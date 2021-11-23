@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon --watch \"./webpack.*.js\" --exec \"npm start\"", 
+    "watch": "nodemon --watch \"./webpack.*.js\" --exec \"npm start\"",
     "build": "wp --mode production",
     "start": "wp --mode development"
   },
@@ -15,6 +15,7 @@
   "dependencies": {
     "nodemon": "^2.0.15",
     "webpack": "^5.64.2",
+    "webpack-merge": "^5.8.0",
     "webpack-nano": "^1.1.1",
     "webpack-plugin-serve": "^1.5.0"
   },
