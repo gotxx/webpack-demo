@@ -5,6 +5,7 @@ const parts = require("./webpack.parts");
 const commonConfig = merge([
     { entry: ["./src"] },
     parts.page({ title: "Demo" }),
+    parts.loadSASS(),
 ]);
 
 const productionConfig = merge([]);
@@ -17,7 +18,7 @@ const developmentConfig = merge([
 
 const getConfig = (mode) => {
     process.env.NODE_ENV = mode;
-    
+
     switch (mode) {
         case "production":
             return merge(commonConfig, productionConfig, { mode });

@@ -31,3 +31,29 @@ exports.debugStats = () => ({
 exports.page = ({ title }) => ({
     plugins: [new MiniHtmlWebpackPlugin({ context: { title } })]
 });
+
+exports.loadCSS = () => ({
+    module: {
+        rules: [
+            { test: /\.css$/, use: ["style-loader", "css-loader"] },
+        ],
+    },
+});
+
+exports.loadSASS = () => ({
+    module: {
+        rules: [
+            { 
+                test: /\.s[ac]ss$/i, 
+                use: [
+                    "style-loader", 
+                    {
+                        loader: "css-loader",
+                        options: { importLoaders: 1 },
+                    }, 
+                    "sass-loader" 
+                ],
+            },
+        ],
+    },
+});
